@@ -1,0 +1,11 @@
+.mian_body {
+	height: 502px;
+	width: 100%;
+	font-size: 0.9em;
+}
+.back {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: #04070C;
+	background-image: url(../images/bg.jpg);
+}
