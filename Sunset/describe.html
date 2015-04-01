@@ -5,8 +5,57 @@
 <link rel="shortcut icon" href="images/icon.png">
 <link rel="stylesheet" type="text/css" href="css/style_main.css">
 <title>日落归官方网站 - 游戏介绍</title>
+<script type="text/javascript">
+var g_scroll_id
+function scroll_right(max,pos,id,speed){
+  if(g_scroll_id){ return false }
+  id = id || "right_area"
+  var doc = document.getElementById(id)
+  var target = doc.scrollHeight / max * (pos - 1)
+  if (doc.scrollTop != target){
+    speed = speed || 20
+    speed = Math.abs(doc.scrollTop - target) / speed
+    g_scroll_id = setInterval(function(){scroll_right_process(doc,speed,target)}, 1)
+  }
+}
+function scroll_right_process(doc,speed,target){
+  if (doc.scrollTop > target){
+    doc.scrollTop -= speed
+    if (doc.scrollTop < target){ doc.scrollTop = target }
+  }
+  if (doc.scrollTop < target){
+    doc.scrollTop += speed
+    if (doc.scrollTop > target){ doc.scrollTop = target }
+  }
+  if (doc.scrollTop == target){
+    g_scroll_id = self.clearInterval(g_scroll_id);
+    location.reload();
+  }
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
 </head>
-<body class="back">
+<body class="back" onLoad="MM_preloadImages('images/command_describe1_c.png','images/commanddescribe2_c.png','images/command_describe2_c.png','images/command_escribe3_c.png')">
 <!--整体表格-->
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -34,8 +83,19 @@
       <tr>
         <td width="16" style="background-image:url('images/b4.png');height:16px"></td>
         <td style="background-image:url('images/b5.png')";>
-        <div class="mian_body">
+        <div class="mian_body"><br>
+          <h1>※ 游戏介绍 ※</h1>
+          <div class="left_area">
+            <a change="true" onclick= "scroll_right(3,1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','images/command_describe1_c.png',1)"><img src="images/command_describe1.png" width="147" height="42" id="Image1"></a>
+            <a change="true" onclick= "scroll_right(3,2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/command_describe2_c.png',1)"><img src="images/command_describe2.png" width="147" height="42" id="Image2"></a>
+            <a change="true" onclick= "scroll_right(3,3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','images/command_escribe3_c.png',1)"><img src="images/command_escribe3.png" width="147" height="42" id="Image3"></a> </div>
+            <div class="right_area" id="right_area">
+              <div class="content_area">1</div>
+              <div class="content_area">2</div>
+              <div class="content_area">3</div>
+            </div>
         </div>
+        
         </td>
         <td width="16" style="background-image:url('images/b6.png');height:16px"></td>
       </tr>

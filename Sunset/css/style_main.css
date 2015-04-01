@@ -9,3 +9,62 @@
 	background-color: #04070C;
 	background-image: url(../images/bg.jpg);
 }
+.mian_body h1 {
+	text-indent: 2;
+	color: #FFF;
+	background-color: #069;
+	height: 42px;
+	font-size: 36px;
+	text-align: center;
+}
+.mian_body h2 {
+	color: #FFF;
+	font-size: 0.9em;
+	background-color: #993300;
+	height: 20px;
+	padding-top: 5px;
+	padding-left: 80px;
+}
+.mian_body h3 {
+  font-size: 18px;
+  color: #C00;
+  text-align: center;
+}
+.mian_body h4 {
+	text-indent: 2em;
+	color: #F30;
+}
+.mian_body h5 {
+	font-size: 18px;
+	text-decoration: line-through;
+}
+.mian_body p{
+	text-indent:2em
+} 
+body,td,th {
+	color: #000;
+}
+.left_area {
+	position: relative;
+	height: 130px;
+	width: 150px;
+	top: 30px;
+	float: left;
+}
+.right_area {
+    line-height: 2;
+	position: relative;
+	overflow: hidden;
+	width: 718px;
+	height: 28em;
+	float: right;
+	top: 25px;
+}
+.content_area {
+	overflow: hidden;
+	height:36em;
+}
+span{
+  cursor: help;
+  border-bottom: 1px dotted #000;
+}
