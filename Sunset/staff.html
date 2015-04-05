@@ -4,9 +4,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="images/icon.png">
 <link rel="stylesheet" type="text/css" href="css/style_main.css">
+<style type="text/css">
+.left_area {
+	height: 220px;
+}
+.title_left {
+	background-color: #A52A2A;
+	width: 272px;
+	color: #FFF;
+	text-align: center;
+}
+.title_right {
+	background-color: #A52A2A;
+	width: 442px;
+	color: #FFF;
+	text-align: center;
+}
+#right_area table{
+	width: 100%;
+	border: 2px solid #222;
+	text-align: center;
+}
+.scroll_content{
+	height: 30em;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+</style>
 <title>日落归官方网站 - STAFF</title>
+<script src="js/js_main.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
 </head>
-<body class="back">
+<body class="back" onLoad="MM_preloadImages('images/command_staff1_c.png','images/command_staff2_c.png','images/command_staff3_c.png','images/command_staff4_c.png','images/command_staff5_c.png')">
 <!--整体表格-->
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -26,14 +77,234 @@
     <!--内容表格-->
     <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="16" style="background-image:url('images/b1.png');width:16px;height:16px"></td>
+        <td width="16" style="background-image:url('images/b1.png');width:16px;height:16px"><a id="main"></a></td>
         <td width="880" style="background-image:url('images/b2.png');height:16px"></td>
         <td width="16" style="background-image:url('images/b3.png');width:16px;height:16px"></td>
       </tr>
       <tr>
         <td width="16" style="background-image:url('images/b4.png');height:16px"></td>
         <td style="background-image:url('images/b5.png')";>
-        <div class="mian_body">
+        <div class="mian_body"><br>
+          <h1>※ 素材来源 ※</h1>
+          <div class="left_area">
+            <a href="#main" change="true" onclick= "scroll_right(5,1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('staff1','','images/command_staff1_c.png',1)"><img src="images/command_staff1.png" width="147" height="42" id="staff1"></a>
+            <a href="#main" change="true" onclick= "scroll_right(5,2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('staff2','','images/command_staff2_c.png',1)"><img src="images/command_staff2.png" width="147" height="42" id="staff2"></a>
+            <a href="#main" change="true" onclick= "scroll_right(5,3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('staff3','','images/command_staff3_c.png',1)"><img src="images/command_staff3.png" width="147" height="42" id="staff3"></a>
+            <a href="#main" change="true" onclick= "scroll_right(5,4)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('staff4','','images/command_staff4_c.png',1)"><img src="images/command_staff4.png" width="147" height="42" id="staff4"></a>
+            <a href="#main" change="true" onclick= "scroll_right(5,5)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('staff5','','images/command_staff5_c.png',1)"><img src="images/command_staff5.png" width="147" height="42" id="staff5"></a></div>
+          <div class="right_area" id="right_area">
+              <div class="content_area">
+              <b>图像素材</b>（排名不分先后）<hr>
+              <table border="2">
+                  <tr>
+                    <td class="title_left"><b>使用素材</b></td>
+                    <td class="title_right"><b>作者</b></td>
+                  </tr>
+                  <tr>
+                    <td>RPG Maker VX Ace RTP</td>
+                    <td>Enterbrain</td>
+                  </tr>
+                  <tr>
+                    <td>脸图/CG/立绘</td>
+                    <td>栗子</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://free-texture.net/">フリーテクスチャ素材館</a></td>
+                    <td>フリーテクスチャ素材館</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://www.cgtextures.com/">CG Textures</a></td>
+                    <td><a href="http://www.cgtextures.com/signup.php">CG Textures</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://obsblackinblue.lofter.com/">蓝的藏宝箱</a></td>
+                    <td>布里蓝</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://rpgmaker.net/">First Seed Material</a></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://horizon.sub.jp/tk/top/diary.cgi">HORIZON SIDE:TK</a></td>
+                    <td>HORIZON SIDE:TK</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://horizon.sub.jp/tk/top/diary.cgi">ドット絵世界</a></td>
+                    <td>七ツ界（ナナツカイ）</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://rm.66rpg.com/thread-222214-1-1.html">森林图块拼接</a></td>
+                    <td>@Nil2011（66RPG）</td>
+                  </tr>
+                    <td><a href="http://cocodoco.chu.jp/index.html">ここどこ</a></td>
+                    <td>めぐり逢音（aine）、種蒔あきね（akkii）</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="content_area">
+                <b>声音素材</b>（排名不分先后）<hr>
+                <table border="2">
+                  <tr>
+                    <td class="title_left"><b>使用素材</b></td>
+                    <td class="title_right"><b>作者</b></td>
+                  </tr>
+                  <tr>
+                    <td>RPG Maker VX Ace RTP</td>
+                    <td>Enterbrain</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://maoudamashii.jokersounds.com/">魔王魂</a></td>
+                    <td>KOUICHI</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://www.vita-chi.net/">びたちー素材馆</a></td>
+                    <td>ちぃ</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://sc.chinaz.com/">站长素材网</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://0006.x0.to/dew/index.html">DEAD END WONDER</a></td>
+                    <td>いなだ/鳩子</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://amachamusic.chagasi.com/">甘茶の音楽工房</a></td>
+                    <td>甘茶</td>
+                  </tr>
+                  <tr>
+                    <td>梦与叶樱伴奏</td>
+                    <td>青木月光</td>
+                  </tr>
+                </table>
+              </div>
+            <div class="content_area">
+                <b>脚本素材</b>（排名不分先后）<hr>
+              <div class="scroll_content">
+              <table border="2">
+                <tr>
+                  <td class="title_left"><b>使用素材</b></td>
+                  <td class="title_right"><b>作者</b></td>
+                </tr>
+                <tr>
+                  <td>物品分类扩展、储存开关变量到文件、<br>game over修正、游戏版本检查、<br>地图显示血条体力及ui界面、<br>判定事件坐标与主角重合、<br>解谜菜单追加</td>
+                  <td>VIPArcher（66RPG）<br>
+                    <a href="https://github.com/VIPArcher/RGSS3">Github</a>
+                    <a href="http://weibo.com/viparcher">微博</a></td>
+                </tr>
+                <tr>
+                  <td>远景图固定、画面震动修复</td>
+                  <td><a href="http://taroxd.github.io/">taroxd （66RPG）</a></td>
+                </tr>
+                <tr>
+                  <td>防按错选项、阅读系统</td>
+                  <td>喵呜喵5（66RPG）</td>
+                </tr>
+                <tr>
+                  <td>显示立绘的简易解谜菜单</td>
+                  <td>椎名（66RPG）</td>
+                </tr>
+                <tr>
+                  <td>选择项扩张</td>
+                  <td><a href="http://woodpenguin.blog.fc2.com/">木星ペンギン</a></td>
+                </tr>
+                <tr>
+                  <td>bitmap扩张、HN_Light V1.0</td>
+                  <td><a href="http://www.tktkgame.com/">半生</a></td>
+                </tr>
+                <tr>
+                  <td>跳过标题画面</td>
+                  <td>光的圆周率（66RPG）</td>
+                </tr>
+                <tr>
+                  <td>bitmap渐变文字</td>
+                  <td>たねＱ</td>
+                </tr>
+                <tr>
+                  <td>窗口大小修改、SionEventManager</td>
+                  <td>Sion（66RPG）</td>
+                </tr>
+                <tr>
+                  <td>Event window、button common events、stop all movements、pop massage、<br>Ace Message System</td>
+                  <td>Yanfly Engine Ace</td>
+                </tr>
+                <tr>
+                  <td>MOG_weather_EX、Mog_event_sensor_range、MOG_active_timer</td>
+                  <td><a href="http://www.atelier-rgss.com/">Moghunter</a></td>
+                </tr>
+                <tr>
+                  <td>人物8方向移动</td>
+                  <td>Claimh</td>
+                </tr>
+                <tr>
+                  <td>截图存档</td>
+                  <td>各种压力的猫君（66RPG）</td>
+                </tr>
+                <tr>
+                  <td>素材缺失报错降为警告</td>
+                  <td>影月千秋（66RPG 余烬之中）</td>
+                </tr>
+                <tr>
+                  <td>移動ルート機能</td>
+                  <td>ぱわー</td>
+                </tr>
+                <tr>
+                  <td>fux2纸老虎加密</td>
+                  <td>fux2（66RPG）</td>
+                </tr>
+              </table></div>
+            </div>
+              <div class="content_area">
+                <b>字体素材</b>（排名不分先后）<hr>
+                <ul>
+                <li>黑体字体 - simhei</li>
+                <li>迷你简启体</li>
+                <li>微软简行楷</li>
+                <li>华文彩云</li>
+                <li>华文行楷</li>
+                <li>Adobe 楷体</li>
+                </ul>
+                <b>使用软件</b>（排名不分先后）<hr>
+                <ul>
+                <li>RPG Maker VX Ace</li>
+                <li>Adobe PhotoShop</li>
+                <li>Microsoft Office Excel</li>
+                <li>Sublime Text 2</li>
+                </ul>
+              </div>
+              <div class="content_area">
+<b>特别感谢</b>（排名不分先后）<hr>
+                <ul>
+                <li>VIPArcher</li>
+                <li>栗子</li>
+                <li>冉葱</li>
+                <li>自古枪兵</li>
+                </ul>
+                <b>BUG反馈</b>（排名不分先后）<hr>
+              <div style="float:left; width: 350px;">
+              <ul>
+                <li>VIPArcher</li>
+                <li>夏_空蝉(Lofter)</li>
+                <li>琅琊樰川(Lofter)</li>
+                <li>镰月天韵(Lofter)</li>
+                <li>恩底彌翁的判官(岚少吧)</li>
+                <li>无奈无奈无奈6(岚少吧)</li>
+                <li>极光涵(岚少吧)</li>
+                <li>胖次丢了一地(岚少吧)</li>
+              </ul>
+              </div>
+              <div style="float: left; width: 350px;">
+              <ul>
+                <li>52萧萧(rpg制作大师吧)</li>
+                <li>浪崖kk(rpg制作大师吧)</li>
+                <li>安乐死之歌(rpg制作大师吧)</li>
+                <li>ydw1994(rpg制作大师吧)</li>
+                <li>Ray8377(rpg制作大师吧)</li>
+                <li>会魔法の天音(rpg制作大师吧)</li>
+              </ul>
+              </div>
+              </div>
+          </div>
         </div>
         </td>
         <td width="16" style="background-image:url('images/b6.png');height:16px"></td>
@@ -51,7 +322,7 @@
   </tr>
   <tr>
     <td align="center">
-      <iframe src="foot.html" width="100%" height="270" align="left" scrolling="no"  frameborder="0"></iframe>
+      <iframe src="foot.html" width="100%" height="100" align="left" scrolling="no"  frameborder="0"></iframe>
     </td>
   </tr>
 </table>

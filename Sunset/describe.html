@@ -4,34 +4,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="images/icon.png">
 <link rel="stylesheet" type="text/css" href="css/style_main.css">
+<style type="text/css">
+.right_area {
+    line-height: 2;
+	position: relative;
+	overflow: hidden;
+	width: 718px;
+	height: 28em;
+	float: right;
+	top: 25px;
+}
+.content_area {
+	overflow: hidden;
+	height:28em;
+}
+.content_area h2{
+	color: #FFF;
+	font-size: 0.9em;
+	background-color: #993300;
+	height: 24px;
+	padding-left: 5px;
+	padding-top: 0px;
+}
+</style>
 <title>日落归官方网站 - 游戏介绍</title>
+<script src="js/js_main.js"></script>
 <script type="text/javascript">
-var g_scroll_id
-function scroll_right(max,pos,id,speed){
-  if(g_scroll_id){ return false }
-  id = id || "right_area"
-  var doc = document.getElementById(id)
-  var target = doc.scrollHeight / max * (pos - 1)
-  if (doc.scrollTop != target){
-    speed = speed || 20
-    speed = Math.abs(doc.scrollTop - target) / speed
-    g_scroll_id = setInterval(function(){scroll_right_process(doc,speed,target)}, 1)
-  }
-}
-function scroll_right_process(doc,speed,target){
-  if (doc.scrollTop > target){
-    doc.scrollTop -= speed
-    if (doc.scrollTop < target){ doc.scrollTop = target }
-  }
-  if (doc.scrollTop < target){
-    doc.scrollTop += speed
-    if (doc.scrollTop > target){ doc.scrollTop = target }
-  }
-  if (doc.scrollTop == target){
-    g_scroll_id = self.clearInterval(g_scroll_id);
-    location.reload();
-  }
-}
 function MM_swapImgRestore() { //v3.0
   var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
 }
@@ -55,7 +53,7 @@ function MM_swapImage() { //v3.0
 }
 </script>
 </head>
-<body class="back" onLoad="MM_preloadImages('images/command_describe1_c.png','images/commanddescribe2_c.png','images/command_describe2_c.png','images/command_escribe3_c.png')">
+<body class="back" onLoad="MM_preloadImages('images/command_describe1_c.png','images/commanddescribe2_c.png','images/command_describe2_c.png','images/command_escribe3_c.png','images/describe_youxue_c.png','images/describe_shuilan_c.png','images/describe_yunyang_c.png')">
 <!--整体表格-->
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -76,23 +74,64 @@ function MM_swapImage() { //v3.0
     <!--内容表格-->
     <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="16" style="background-image:url('images/b1.png');width:16px;height:16px"></td>
+        <td width="16" style="background-image:url('images/b1.png');width:16px;height:16px"><a id="main"></a></td>
         <td width="880" style="background-image:url('images/b2.png');height:16px"></td>
         <td width="16" style="background-image:url('images/b3.png');width:16px;height:16px"></td>
       </tr>
       <tr>
         <td width="16" style="background-image:url('images/b4.png');height:16px"></td>
-        <td style="background-image:url('images/b5.png')";>
+        <td style="background-image:url('images/b5.png')"; >
         <div class="mian_body"><br>
           <h1>※ 游戏介绍 ※</h1>
           <div class="left_area">
-            <a change="true" onclick= "scroll_right(3,1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','images/command_describe1_c.png',1)"><img src="images/command_describe1.png" width="147" height="42" id="Image1"></a>
-            <a change="true" onclick= "scroll_right(3,2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/command_describe2_c.png',1)"><img src="images/command_describe2.png" width="147" height="42" id="Image2"></a>
-            <a change="true" onclick= "scroll_right(3,3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','images/command_escribe3_c.png',1)"><img src="images/command_escribe3.png" width="147" height="42" id="Image3"></a> </div>
+            <a href="#main" change="true" onclick= "scroll_right(3,1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','images/command_describe1_c.png',1)"><img src="images/command_describe1.png" width="147" height="42" id="Image1"></a>
+            <a href="#main" change="true" onclick= "scroll_right(3,2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/command_describe2_c.png',1)"><img src="images/command_describe2.png" width="147" height="42" id="Image2"></a>
+            <a href="#main" change="true" onclick= "scroll_right(3,3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','images/command_describe3_c.png',1)"><img src="images/command_describe3.png" width="147" height="42" id="Image3"></a> </div>
             <div class="right_area" id="right_area">
-              <div class="content_area">1</div>
-              <div class="content_area">2</div>
-              <div class="content_area">3</div>
+              <div class="content_area">
+                <h2>游戏剧情</h2>
+                <p>大肆兴起的日落归仪式、神秘失踪的人们，这两者之间究竟有何联系？为了寻找失踪的好友，少女独自踏上了异世的旅程……</p>
+                <h2>人物介绍</h2>
+                <table width="718" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="220"><a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','images/describe_youxue_c.png',1)"><img src="images/describe_youxue.png" width="239" height="220" id="Image6"></a></td>
+                    <td><a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','images/describe_shuilan_c.png',1)"><img src="images/describe_shuilan.png" width="239" height="220" id="Image4"></a></td>
+                    <td><a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','images/describe_yunyang_c.png',1)"><img src="images/describe_yunyang.png" width="239" height="220" id="Image5"></a></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="content_area">
+                <h2>无恐怖/微恐怖模式自由切换 <span title="※ 推荐使用微恐怖模式进行完整的游戏体验">★ 注 ★</span></h2>
+                <p>游戏中包含<span title="※ 无恐怖模式下无法达成True End及以上的结局">无恐怖模式</span>和<span title="※ 微恐怖模式可以达成所有结局。">微恐怖模式</span>可供选择。（可在游戏开始时选择模式，或者游戏进行中在烛台上选择游戏模式！）微恐怖模式包含少量"<span title="※ 但不会出现非常可怕的CG等，请轻松游戏。">震你一下</span>"元素，对这类元素较敏感的同学请酌情选择模式！</p>
+                <h2>可跳过追逐战功能 <span title="※ 跳过追逐战并不会影响任何剧情">★ 注 ★</span></h2>
+                <p>跳过追逐战特色功能：<span title="※ 最终追逐战可选择削弱难度">大部分追逐战</span>都可以选择跳过，在无恐怖模式下可以直接选择跳过追逐战。微恐怖模式下<span title="※ 消耗符石死亡亦算死亡1次">死亡5次</span>后可选择跳过追逐战！</p>
+                <h2>两种模式存档点选择 <span title="※ 该选择无法在游戏中更改，此类存档仅尤雪可以使用">★ 注 ★</span></h2>
+                <p><b>萌物存档点：</b>该模式下存档点为一个会吐槽的<span title="※ 它是谁？撒~谁知道呢！">小骷髅？</span>，并且可以<span title="※ 它将在每层的固定位置出现">无限制</span>地进行存档。</p>
+                <p><b>记录册存档点：</b>该模式下存档点为古旧的记录册，每层都有许多个，但是每次存档后其都会冒出奇怪的火焰，直到<span title="※ 燃烧10秒，并且只有与玩家在同一地图上才会计时">火焰消失</span>才可再次在同一本记录册进行存档！</p>
+              </div>
+              <div class="content_area">
+                <h2>部分道具说明</h2>
+                <table width="718" border="2" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="85" align="center"><img src="images/icon_4.png" width="24" height="24"><strong>巧克力</strong></td>
+                    <td align="center">美味的巧克力，可以恢复体力</td>
+                    <td width="85" align="center"><img src="images/icon_6.png" width="24" height="24"><strong>日式人偶</strong></td>
+                    <td align="center">即使没能在占卜屋获得也没关系的普通道具</td>
+                    <td width="85" align="center"><img src="images/icon_2.png" width="24" height="24"><strong>符纸</strong></td>
+                    <td align="center">会封印术的人可以利用符纸短暂封印灵体</td>
+                  </tr>
+                  <tr>
+                    <td align="center"><img src="images/icon_1.png" width="24" height="24"><strong>符石</strong></td>
+                    <td align="center">神奇的灵石，能在持有者危机时恢复其体力</td>
+                    <td align="center"><img src="images/icon_3.png" width="24" height="24"><strong>钥匙</strong></td>
+                    <td align="center">只有持有即可打开对应的锁。</td>
+                    <td align="center"><img src="images/icon_5.png" width="24" height="24"><strong>文献</strong></td>
+                    <td align="center">记录着前人调查后留下的线索</td>
+                  </tr>
+                </table>
+                <h2>游戏简单攻略</h2>
+                暂未复制过来。请前往 <a href="http://the-sunset.lofter.com/">Lofter</a> 查看
+              </div>
             </div>
         </div>
         
@@ -112,7 +151,7 @@ function MM_swapImage() { //v3.0
   </tr>
   <tr>
     <td align="center">
-      <iframe src="foot.html" width="100%" height="270" align="left" scrolling="no"  frameborder="0"></iframe>
+      <iframe src="foot.html" width="100%" height="100" align="left" scrolling="no"  frameborder="0"></iframe>
     </td>
   </tr>
 </table>
