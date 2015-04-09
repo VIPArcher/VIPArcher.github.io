@@ -5,25 +5,44 @@
 <link rel="shortcut icon" href="images/icon.png">
 <link rel="stylesheet" type="text/css" href="css/style_main.css">
 <style type="text/css">
-.viparcher {
-	color: #F00;
-	font-size: 24px;
+.right_area {
+    line-height: 2;
+	position: relative;
+	overflow: hidden;
+	width: 718px;
+	height: 28em;
+	float: right;
+	top: 25px;
 }
-.mian_body p{
-	text-indent:8em
-} 
+.content_area {
+	overflow: hidden;
+	height:28em;
+}
+.content_area p{
+	line-height: 10px;	
+}
+.content_area h2{
+	color: #FFF;
+	font-size: 0.9em;
+	background-color: #993300;
+	height: 24px;
+	padding-left: 5px;
+	padding-top: 0px;
+}
+.scroll_content{
+	height: 23em;
+	overflow-y: scroll;
+	overflow-x: none;
+	background-color: #FFF;
+}
 </style>
+<script src="JS/js_main.js"></script>
 <title>日落归官方主页 - 首页</title>
 </head>
 <body class="back">
 <!--整体表格-->
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="50"><p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
+  <tr><td height="100"></td></tr>
   <tr>
     <td>
       <!--页眉标签-->
@@ -43,21 +62,43 @@
       <tr>
         <td width="16" style="background-image:url('images/b4.png');height:16px"></td>
         <td style="background-image:url('images/b5.png')";>
-        <div class="mian_body">
-          <div class="content_area"><br>
+        <div class="mian_body"><br>
           <h1>※ 基本信息 ※</h1>
-          <p><a class="viparcher"><strong>制作:</strong></a>&nbsp;&nbsp;百里飞柳(老鹰)</p>
-          <h2>游戏大小</h2>
-            <p>42M</p>
-          <h2>当前版本</h2>
-            <p><span title="※ 2015年3月26日更新">v1.5.0正式版</span></p>
-          <h2>游戏类型</h2>
-            <p>剧情、探索、解谜</p>
-          <h2>制作工具</h2>
-            <p><span title="※ 不用安装也可以进行游戏">RPG Maker VX ACE</span></p>
-          <h2>游戏时间</h2>
-          <p>共<span title="※ 另附1个番外">8个</span>章节，每章游戏时间<span title="※ 仅供参考，实际游戏时间依照个人水平而定">约为5~20分钟</span></p>
+          <div class="left_area">
+          <a href="#main" change="true" onclick= "scroll_right(3,1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image1','','images/command_home1_c.png',1)"><img src="images/command_home1.png" width="147" height="42" id="Image1"></a>
+            <a href="#main" change="true" onclick= "scroll_right(3,2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/command_home2_c.png',1)"><img src="images/command_home2.png" width="147" height="42" id="Image2"></a>
+            <a href="#main" change="true" onclick= "scroll_right(3,3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','images/command_home3_c.png',1)"><img src="images/command_home3.png" width="147" height="42" id="Image3"></a>
           </div>
+          <div class="right_area" id="right_area">
+              <div class="content_area">
+              <strong>作者信息</strong><hr>
+              <h2>◎ 游戏制作</h2>
+                <p>百里飞柳(老鹰)</p>
+              <h2>◎ 脚本</h2>
+                <p>VIPArcher(麟贵宾)</p>
+              <h2>◎ CG/脸图</h2>
+                <p>栗子</p>
+              <h2>◎ 测试</h2>
+                <p>自古枪兵、冉葱</p>
+              </div>
+              <div class="content_area">
+              <strong>游戏信息</strong><hr>
+              <h2>游戏大小</h2>
+                <p>42M</p>
+              <h2>当前版本</h2>
+                <p><span title="※ 2015年3月26日更新">v1.5.0正式版</span></p>
+              <h2>游戏类型</h2>
+                <p>剧情、探索、解谜、<span title="※ 纯结的高中女生之间的友谊！"><s>百合？</s></span></p>
+              <h2>制作工具</h2>
+                <p><span title="※ 不用安装也可以进行游戏">RPG Maker VX ACE</span></p>
+              <h2>游戏时间</h2>
+              <p>共<span title="※ 另附1个番外">8个</span>章节，每章游戏时间<span title="※ 仅供参考，实际游戏时间依照个人水平而定">约为5~20分钟</span></p>
+              </div>
+              <div class="content_area">
+              <strong>更新历史</strong><hr>
+              <div class="scroll_content">更新历史</div>
+              </div>
+            </div>
         </div>
         </td>
         <td width="16" style="background-image:url('images/b6.png');height:16px"></td>
