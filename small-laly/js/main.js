@@ -64,7 +64,7 @@ function get_5result(result_array,i){
     var img_url = result_array[1].replace(/http:\/\/image.rakuten.co.jp\/small-laly\/(.*?).jpg/i, "$1");
     var iscontaintest = img_url.indexOf(".jpg")== -1 ? false : true;
     var result = '<li><div class="ureitem">'
-    if (i <= 3) {position = 'right'} else{position = 'left'};
+    if (i <= 2) {position = 'right'} else{position = 'left'};
     if (document.getElementById('tax_' + (i + 1)).checked) {tax_text = '<span >(税込) 送料別</span>'};
     result += '<a href="' + result_array[0] + '" target="_top" bigimage="' + result_array[1] + '" class="viparcher_image_zoom_list" position="' + position + '" >'
     if (iscontaintest) {
