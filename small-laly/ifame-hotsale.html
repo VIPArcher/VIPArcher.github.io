@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>8套 排行榜 ifame-hotsale 编辑工具</title>
+  <title>Small-laly排行在线编辑输出HTML工具</title>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="js/main.js"></script>
 <style type="text/css">
 body{ text-align:center}
 .box{ margin:0 auto; width:1200px; height:100%;}
@@ -25,79 +26,40 @@ body{ text-align:center}
 	border: 1px inset #000;
 }
 .box li input{
-	width: 95%;
+	float: left;
+	width: 98%;
 }
 .button_ok{
     margin:0 auto;
     width: 1200px;
 }
-.error{
-      width:100%;
-      background-color: darksalmon;}
-    label{cursor: pointer;}
-    #etc,#result{ height:100px;}
-    .child{ margin-left:20px;}
-    .child2{ margin-left:40px;}
-    td{ position: relative; }
-    .quick_button {
-      position: absolute;
-      top:5px;
-      width:6em;
-      color: #404040;
-      background-color: white;
-      padding-left: 0.5em;
-    }
+.button_ok button{
+    margin:5px;
+}
+.error{width:100%;background-color: darksalmon;}
+label{ float: left; margin: 2px; padding: 0px;}
 </style>
   <script type="text/javascript">
-    // 获取结果列表
-    function get_result(result_array,i){
-      var result = '<li><p class="rank">NO.' + (i + 1) + '</p>'
-      result += '<a href="' + result_array[0] + '" target="_blank">'
-      result += '<img src="' + result_array[1] + '" ></a><br>'
-      result += '<p class="name">' + result_array[2] + '</p>'
-      result += '<p class="price">' + result_array[3] + '<!----><span >(税込) 送料別</span></p>'
-      result += '</li>'
-      return result
-    }
-    // 获取当前系统时间
-    function get_time(){
-      var date = new Date()
-      var string = ""
-      string += date.getFullYear() + '.' + (date.getMonth()+1) + '.' + date.getDate()
-      return string
-    }
-    //检查信息是否未填
-    function check_null(value,id){
-      if(value == document.getElementById(id.substring(1)).defaultValue){ $(id).addClass("error") }
-      else{ $(id).removeClass("error") }
-      return value
-    }
-    // 显示最终结果
-    function show_result(){
-        var result_array = [[0],[0],[0],[0],[0],[0],[0],[0]]
-        var string = ""
-        $.each(result_array, function(i) {
-            result_array[i][0] = check_null($('#goods-link_' + (i + 1)).val(),'#goods-link_' + (i + 1))
-            result_array[i][1] = check_null($('#image-url_' + (i + 1)).val(),'#image-url_' + (i + 1))
-            result_array[i][2] = check_null($('#goods-note_' + (i + 1)).val(),'#goods-note_' + (i + 1))
-            result_array[i][3] = check_null($('#goods-price_' + (i + 1)).val(),'#goods-price_' + (i + 1))
-            string += get_result(result_array[i], i)
-        });
-        $("#result").val("<ul>" + string + "</ul>")
-    }
     // 为页面中的元素添加事件
     function add_listner(){
-      $("#show_result").click( show_result )
-    }
-    // 页面加载完成后执行的操作
-    $(document).ready(function(){
+      $("#show_5result").click( show_5result )
+      $("#show_8result").click( show_8result )
+      $("#reload_page").click( function(){
+        if (confirm("你确定清空吗？")) {
+          document.location.reload();
+          $("#result").val("")
+        }
+        else { }
+      })}
+      // 页面加载完成后执行的操作
+      $(document).ready(function(){
       // 添加事件
       add_listner()
     })
   </script>
 </head>
 <body>
-<h1>内页8套商品排行在线编辑输出HTML工具</h1>
+<h1>Small-laly排行在线编辑输出HTML工具</h1>
 <div class="box">
     <ul>
         <li>
@@ -105,61 +67,69 @@ body{ text-align:center}
             <input id="goods-link_1" name="NO.1 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_1" name="NO.1 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_1" name="NO.1 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_1" name="NO.1 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_1" name="NO.1 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_1" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.2商品</p>
             <input id="goods-link_2" name="NO.2 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_2" name="NO.2 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_2" name="NO.2 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_2" name="NO.2 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_2" name="NO.2 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_2" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.3商品</p>
             <input id="goods-link_3" name="NO.3 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_3" name="NO.3 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_3" name="NO.3 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_3" name="NO.3 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_3" name="NO.3 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_3" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.4商品</p>
             <input id="goods-link_4" name="NO.4 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_4" name="NO.4 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_4" name="NO.4 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_4" name="NO.4 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_4" name="NO.4 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_4" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.5商品</p>
             <input id="goods-link_5" name="NO.5 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_5" name="NO.5 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_5" name="NO.5 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_5" name="NO.5 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_5" name="NO.5 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_5" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.6商品</p>
             <input id="goods-link_6" name="NO.6 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_6" name="NO.6 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_6" name="NO.6 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_6" name="NO.6 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_6" name="NO.6 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_6" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.7商品</p>
             <input id="goods-link_7" name="NO.7 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_7" name="NO.7 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_7" name="NO.7 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_7" name="NO.7 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_7" name="NO.7 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_7" /></label>(税込) 送料別
         </li>
         <li>
             <p>NO.8商品</p>
             <input id="goods-link_8" name="NO.8 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="image-url_8" name="NO.8 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input id="goods-note_8" name="NO.8 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input id="goods-price_8" name="NO.8 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input id="goods-price_8" name="NO.8 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
+            <label><input name="NO.1税送" type="checkbox" id="tax_8" /></label>(税込) 送料別
         </li>
     </ul>
 </div>
 <div class="button_ok">
-    <button id="show_result">输出结果</button>
+    <button id="show_5result">输出首页5套页HTML</button><button id="show_8result">输出内页8套页HTML</button><button id="reload_page">清空输入</button>
 </div>
 <textarea style="width: 1200px; height: 400px;" id="result" tabindex="99"></textarea>
 <br><a href="http://weibo.com/viparcher">Created By VIPArcher All Rights Reserved.<br></a>
