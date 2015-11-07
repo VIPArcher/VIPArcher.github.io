@@ -28,10 +28,15 @@ function check_null(value,id){
 function get_8result(result_array,i){
     var tax_text = ''
     var result = '<li><p class="rank">NO.' + (i + 1) + '</p>'
-    var img_url = result_array[1].replace(/\/small-laly\/(.*?).jpg/i, "$1");
+    var img_url = result_array[1].replace(/http:\/\/image.rakuten.co.jp\/small-laly\/(.*?).jpg/i, "$1");
+    var iscontaintest = img_url.indexOf(".jpg")== -1 ? false : true;
     if (document.getElementById('tax_' + (i + 1)).checked) {tax_text = '<span >(税込) 送料別</span>'};
     result += '<a href="' + result_array[0] + '" target="_blank">'
-    result += '<img class="item" src="http://thumbnail.image.rakuten.co.jp/@0_mall/small-laly/' + img_url + '.jpg?_ex=250x250&s=2&r=1"></a><br>'
+    if (iscontaintest) {
+        result += '<img class="item" src="' + img_url + '"></a><br>'
+    } else{
+        result += '<img class="item" src="http://thumbnail.image.rakuten.co.jp/@0_mall/small-laly/' + img_url + '.jpg?_ex=250x250&s=2&r=1"></a><br>'
+    };
     result += '<p class="name">' + result_array[2] + '</p>'
     result += '<p class="price">' + result_array[3] + tax_text + '</p>'
     result += '</li>'
@@ -56,12 +61,17 @@ function show_8result(){
 function get_5result(result_array,i){
     var position = ''
     var tax_text = ''
-    var img_url = result_array[1].replace(/\/small-laly\/(.*?).jpg/i, "$1");
+    var img_url = result_array[1].replace(/http:\/\/image.rakuten.co.jp\/small-laly\/(.*?).jpg/i, "$1");
+    var iscontaintest = img_url.indexOf(".jpg")== -1 ? false : true;
     var result = '<li><div class="ureitem">'
     if (i <= 3) {position = 'right'} else{position = 'left'};
     if (document.getElementById('tax_' + (i + 1)).checked) {tax_text = '<span >(税込) 送料別</span>'};
     result += '<a href="' + result_array[0] + '" target="_top" bigimage="' + result_array[1] + '" class="viparcher_image_zoom_list" position="' + position + '" >'
-    result += '<img class="item" src="http://thumbnail.image.rakuten.co.jp/@0_mall/small-laly/' + img_url + '.jpg?_ex=250x250&s=2&r=1">'
+    if (iscontaintest) {
+        result += '<img class="item" src="' + img_url + '">'
+    } else{
+        result += '<img class="item" src="http://thumbnail.image.rakuten.co.jp/@0_mall/small-laly/' + img_url + '.jpg?_ex=250x250&s=2&r=1">'
+    };
     result += '<p class="name">' + result_array[2] + '</p>'
     result += '<p class="price">' + result_array[3] + tax_text + '</p>'
     result += '</a></div></li>'
