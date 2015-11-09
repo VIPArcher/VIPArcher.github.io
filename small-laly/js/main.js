@@ -1,28 +1,31 @@
 // 获取当前系统时间
 function get_time(){
+  var show_day =new Array(' ','月','火','水','木','金','土','日');
   var date = new Date()
   var string = ""
-  string += date.getFullYear() + '.' + (date.getMonth()+1) + '.' + date.getDate()
+  string += date.getFullYear() + '.' + (date.getMonth()+1) + '.' + date.getDate() + '(' + show_day[date.getDay()] +')'
   return string
 }
 //检查信息是否未填
 function check_null(value,id){
-  if(value == document.getElementById(id.substring(1)).defaultValue){ $(id).addClass("error") }
+  if(value == document.getElementById(id.substring(1)).defaultValue){
+    $(id).addClass("error");
+    alert(document.getElementById(id.substring(1)).name + "未填，请检查！");
+  }
   else{ $(id).removeClass("error") }
   return value
 }
-// 获取当前系统时间
-function get_time(){
-  var date = new Date()
-  var string = ""
-  string += date.getFullYear() + '.' + (date.getMonth()+1) + '.' + date.getDate()
-  return string
-}
-//检查信息是否未填
-function check_null(value,id){
-  if(value == document.getElementById(id.substring(1)).defaultValue){ $(id).addClass("error") }
-  else{ $(id).removeClass("error") }
-  return value
+// 复制文本框内代码
+function copytoclip(){
+    var Url = document.getElementById("result");
+    if (Url.value == '') {
+        alert("文本框内为空")
+    }
+    else {
+        Url.select();
+        document.execCommand("Copy");
+        alert("已复制代码到剪切板");
+    }
 }
 // 获取8套结果列表
 function get_8result(result_array,i){
