@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Small-laly商品展示在线编辑输出HTML工具</title>
+  <title>Small-laly排行在线编辑输出HTML工具</title>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="js/main.js"></script>
 <style type="text/css">
@@ -62,6 +62,7 @@ label{ float: left; margin: 2px; padding: 0px;}
         $("#show_8result").click( show_8result )
         $("#show_daynewresult").click( show_daynewresult )
         $("#reload_page").click( clear_input )
+        $("#copytoclip").click( copytoclip )
     }
     // 页面加载完成后执行的操作
     $(document).ready(function(){
@@ -71,7 +72,7 @@ label{ float: left; margin: 2px; padding: 0px;}
   </script>
 </head>
 <body>
-<h1>Small-laly商品展示在线编辑输出HTML工具</h1>
+<h1>Small-laly排行在线编辑输出HTML工具</h1>
 <div class="box">
     <ul>
         <li>
@@ -144,6 +145,7 @@ label{ float: left; margin: 2px; padding: 0px;}
     <button id="show_5result" title="输出的内容用于'iframe\iframe-toprank'文件夹下的内页" >输出首页5套页HTML</button>
     <button id="show_8result" title="输出的内容用于'iframe\ifame-hotsale'文件夹下的内页" >输出内页8套页HTML</button>
     <button id="show_daynewresult" title="输出的内容用于'iframe\ifame-hotsale.html'页面的每日更新部分" >输出每日更新8套HTML</button>
+    <button id="copytoclip" title="复制代码到剪切板" >复制到剪切板</button>
     <button id="reload_page" title="清空已输入的数据" >清空输入</button>
 </div>
 <textarea style="width: 1200px; height: 380px;" id="result" tabindex="99"></textarea>
