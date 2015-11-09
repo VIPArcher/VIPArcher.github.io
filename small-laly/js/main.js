@@ -95,10 +95,10 @@ function show_5result(){
             $(id_prefix[i] + id_suffix[j]).removeClass("error")
         });
     });
-    $("#result").val('<div id="ranking"><div style="font-size:11px;margin:5px 0;font-family:arial">'+ get_time() + '更新</div><div id="ookan"><li><div class="ookanitem"><img src="images/rank_1.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_2.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_3.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_4.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_5.jpg" border="0"></div></li></div><div id="rankitem">' + string + '</div></div>')
+    $("#result").val('<div id="ranking"><div style="font-size:11px;margin:5px 0;font-family:arial">' + get_time() + '更新</div><div id="ookan"><li><div class="ookanitem"><img src="images/rank_1.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_2.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_3.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_4.jpg" border="0"></div></li><li><div class="ookanitem"><img src="images/rank_5.jpg" border="0"></div></li></div><div id="rankitem">' + string + '</div></div>')
 }
 
-// 获取8套结果列表
+// 获取每日更新8套结果列表
 function get_daynewresult(result_array,i){
     var tax_text = ''
     var result = '<li>'
@@ -116,7 +116,7 @@ function get_daynewresult(result_array,i){
     result += '</li>'
     return result
 }
-// 显示8套最终结果
+// 显示每日更新8套最终结果
 function show_daynewresult(){
     var result_array = [[0],[0],[0],[0],[0],[0],[0],[0]]
     var string = ""
@@ -127,5 +127,5 @@ function show_daynewresult(){
         result_array[i][3] = check_null($('#goods-price_' + (i + 1)).val(),'#goods-price_' + (i + 1))
         string += get_daynewresult(result_array[i], i)
     });
-    $("#result").val('<div class="top"><ul>' + string + "</ul></div>")
+    $("#result").val('<div class="top">' + get_time() + '更新<ul>' + string + "</ul></div>")
 }
