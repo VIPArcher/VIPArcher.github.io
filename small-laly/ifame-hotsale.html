@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Small-laly排行在线编辑输出HTML工具</title>
-  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <title>Small-laly商品展示在线编辑输出HTML工具</title>
+  <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/main.js"></script>
 <style type="text/css">
 body{ text-align:center}
@@ -33,6 +33,20 @@ body{ text-align:center}
     margin:0 auto;
     width: 1200px;
 }
+.box ul li div,{
+    height: 80px;
+}
+.box ul li div span{
+    line-height:80px;
+    margin-left: 60px;
+}
+.box ul li div img{
+    float: right;
+    margin: 10px;
+    border: 1px solid #e0e0e0;
+    height: 50px;
+    width: 50px;
+}
 .button_ok button{
     margin:5px;
 }
@@ -41,15 +55,13 @@ label{ float: left; margin: 2px; padding: 0px;}
 </style>
   <script type="text/javascript">
     // 清空内容
-    function clear_input(){
-    }
+    function clear_input(){ if (confirm("你确定清空吗？")) { document.location.reload(); $("#result").val("") } }
     // 为页面中的元素添加事件
     function add_listner(){
         $("#show_5result").click( show_5result )
         $("#show_8result").click( show_8result )
-        $("#reload_page").click( function(){
-            if (confirm("你确定清空吗？")) { document.location.reload(); $("#result").val("") } else { }
-        })
+        $("#show_daynewresult").click( show_daynewresult )
+        $("#reload_page").click( clear_input )
     }
     // 页面加载完成后执行的操作
     $(document).ready(function(){
@@ -63,65 +75,65 @@ label{ float: left; margin: 2px; padding: 0px;}
 <div class="box">
     <ul>
         <li>
-            <p>NO.1商品</p>
+            <div><span>NO.1商品</span><img id="test_img_1" src="#" title="NO.1商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_1" name="NO.1 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_1" name="NO.1 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_1" name="NO.1 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_1'].src=this.value;" style="color:#999" />
             <input autocomplete="off" id="goods-note_1" name="NO.1 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_1" name="NO.1 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_1" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.2商品</p>
+            <div><span>NO.2商品</span><img id="test_img_2" src="#" title="NO.2商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_2" name="NO.2 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_2" name="NO.2 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_2" name="NO.2 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_2'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_2" name="NO.2 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_2" name="NO.2 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_2" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.3商品</p>
+            <div><span>NO.3商品</span><img id="test_img_3" src="#" title="NO.3商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_3" name="NO.3 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_3" name="NO.3 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_3" name="NO.3 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_3'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_3" name="NO.3 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_3" name="NO.3 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_3" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.4商品</p>
+            <div><span>NO.4商品</span><img id="test_img_4" src="#" title="NO.4商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_4" name="NO.4 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_4" name="NO.4 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_4" name="NO.4 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_4'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_4" name="NO.4 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_4" name="NO.4 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_4" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.5商品</p>
+            <div><span>NO.5商品</span><img id="test_img_5" src="#" title="NO.5商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_5" name="NO.5 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_5" name="NO.5 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_5" name="NO.5 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_5'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_5" name="NO.5 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_5" name="NO.5 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_5" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.6商品</p>
+            <div><span>NO.6商品</span><img id="test_img_6" src="#" title="NO.6商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_6" name="NO.6 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_6" name="NO.6 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_6" name="NO.6 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_6'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_6" name="NO.6 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_6" name="NO.6 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_6" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.7商品</p>
+            <div><span>NO.7商品</span><img id="test_img_7" src="#" title="NO.7商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_7" name="NO.7 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_7" name="NO.7 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_7" name="NO.7 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_7'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_7" name="NO.7 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_7" name="NO.7 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_7" /></label>(税込) 送料別
         </li>
         <li>
-            <p>NO.8商品</p>
+            <div><span>NO.8商品</span><img id="test_img_8" src="#" title="NO.8商品预览图" onerror="this.src='http://viparcher.github.io/Sunset/images/b5.png';"/><br></div>
             <input autocomplete="off" id="goods-link_8" name="NO.8 产品地址" type="text" value="商品楽天地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
-            <input autocomplete="off" id="image-url_8" name="NO.8 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+            <input autocomplete="off" id="image-url_8" name="NO.8 产品图片地址" type="text" value="商品首图地址" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}; document.images['test_img_8'].src=this.value;" style="color:#999"/>
             <input autocomplete="off" id="goods-note_8" name="NO.8 产品简介" type="text" value="商品简介" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
             <input autocomplete="off" id="goods-price_8" name="NO.8 产品价格" type="text" value="商品价格" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999;width: 50%;"/>
             <label><input autocomplete="off" name="NO.1税送" type="checkbox" id="tax_8" /></label>(税込) 送料別
@@ -129,8 +141,11 @@ label{ float: left; margin: 2px; padding: 0px;}
     </ul>
 </div>
 <div class="button_ok">
-    <button id="show_5result">输出首页5套页HTML</button><button id="show_8result">输出内页8套页HTML</button><button id="reload_page">清空输入</button>
+    <button id="show_5result" title="输出的内容用于'iframe\iframe-toprank'文件夹下的内页" >输出首页5套页HTML</button>
+    <button id="show_8result" title="输出的内容用于'iframe\ifame-hotsale'文件夹下的内页" >输出内页8套页HTML</button>
+    <button id="show_daynewresult" title="输出的内容用于'iframe\ifame-hotsale.html'页面的每日更新部分" >输出每日更新8套HTML</button>
+    <button id="reload_page" title="清空已输入的数据" >清空输入</button>
 </div>
-<textarea style="width: 1200px; height: 400px;" id="result" tabindex="99"></textarea>
-<br><br><br><a href="http://weibo.com/viparcher">Created By VIPArcher All Rights Reserved.<br></a>
+<textarea style="width: 1200px; height: 380px;" id="result" tabindex="99"></textarea>
+<br><br><a href="http://weibo.com/viparcher">Created By VIPArcher All Rights Reserved.<br></a>
 </html>
