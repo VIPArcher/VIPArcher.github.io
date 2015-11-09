@@ -127,5 +127,5 @@ function show_daynewresult(){
         result_array[i][3] = check_null($('#goods-price_' + (i + 1)).val(),'#goods-price_' + (i + 1))
         string += get_daynewresult(result_array[i], i)
     });
-    $("#result").val('<div class="top">' + get_time() + '更新<ul>' + string + "</ul></div>")
+    $("#result").val('<div class="top"><p>' + get_time() + '更新</p><ul>' + string + "</ul></div>")
 }
