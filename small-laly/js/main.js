@@ -150,3 +150,35 @@ function show_daynewresult(){
     });
     $("#result").val('<div class="top">\n  <p>' + get_time() + '更新</p>\n  <ul>' + string + "\n  </ul>\n</div>")
 }
+// 获取细节图 product 页结果列表
+function get_productresult(number){
+    var result = '<div id="Adv">'
+    var file_path = check_null($('#file_path').val(),'#file_path')
+    var file_name = check_null($('#file_name').val(),'#file_name')
+    for (var i = 1; i < (number + 1); i++) {
+        result += '<div class="ImgList">' + '<img src="http://image.rakuten.co.jp/small-laly/cabinet/' + file_path + '/'
+        result += file_name + '_0' + i + '.jpg" width="700"/></div>'
+    };
+    result += '<ul class="button">'
+    for (var j = 1; j < (number + 1); j++) {
+        j == 1 ? result += '<li class="hover">' : result += '<li>'
+        result += '<img src="http://image.rakuten.co.jp/small-laly/cabinet/' + file_path + '/'
+        result += file_name + '_0' + j + '.jpg" width="100%"/></li>'
+    };
+    result += '</ul></div>'
+    return result
+}
+// 显示细节图 product 页最终结果
+function show_product(){
+    var number = + check_null($('#number').val(),'#number')
+    var string = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title><script type="text/javascript" src="../js/jquery.js"></script>'
+    string += '<style>*{margin:0;padding:0}img{border:0}#Adv{width:100%;height:500px;position:relative}#Adv .ImgList{width:700;height:540px!important;position:absolute;left:2px;top:-1px;z-index:2}'
+    string += '#Adv ul.button li{width:135px;height:85px!important;background:#000;border:1px dotted #fff;float:left;margin:0 1.5px;list-style-type:none}#Adv ul.button{height:113px;position:absolute;'
+    string += 'left:0;top:442px!important;z-index:3;display:inline-block;width:700px}#Adv ul.button li{border:solid 1px #FFF}#Adv ul.button li.hover{border:solid 1px #999}</style></head><body>'
+    string += get_productresult(number)
+    string += '<script type="text/javascript">var _index=0;var timePlay=null;$("#Adv .ImgList").eq(0).show().siblings("div").hide();$("ul.button li").hover(function(){clearInterval(timePlay);'
+    string += '_index=$(this).index();$(this).addClass("hover").siblings().removeClass("hover");$("#Adv .ImgList").eq(_index).fadeIn().siblings("div").fadeOut()},function(){autoPlay()});'
+    string += 'function autoPlay(){timePlay=setInterval(function(){_index++;if(_index<6){$("ul.button li").eq(_index).addClass("hover").siblings().removeClass("hover");'
+    string += '$("#Adv .ImgList").eq(_index).fadeIn().siblings("div").fadeOut()}else{_index=-1}},2000)}autoPlay();</script></body></html>'
+    $("#result").val( string )
+}
