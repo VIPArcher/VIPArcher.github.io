@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Small-laly商品展示在线编辑输出HTML工具</title>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="js/main.js"></script>
+<style type="text/css">
+body{ text-align:center }
+li { list-style-type: none; padding: 10px; }
+li input { margin: 5px; width: 120px;}
+li div{ width: 650px; border: 1px solid #000; margin: 0 auto;padding: 5px}
+.error{background-color: darksalmon;}
+</style>
+  <script type="text/javascript">
+    // 清空内容
+    function clear_input(){ if (confirm("你确定清空吗？")) { document.location.reload(); $("#result").val("") } }
+    // 为页面中的元素添加事件
+    function add_listner(){
+        $("#show_product").click( show_product )
+        $("#reload_page").click( clear_input )
+        $("#copytoclip").click( copytoclip )
+    }
+    // 页面加载完成后执行的操作
+    $(document).ready(function(){
+    // 添加事件
+    add_listner()
+    })
+  </script>
+</head>
+<body>
+<h1>Small-laly商品细节图 product 页在线编辑输出HTML工具</h1>
+<li>
+    <div>
+        http://image.rakuten.co.jp/small-laly/cabinet/
+        <input autocomplete="off" id="file_path" name="文件夹" type="text" value="文件夹" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999"/>
+        /
+        <input autocomplete="off" id="file_name" name="货号" type="text" value="货号" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'};" style="color:#999" /><br>
+    </div>
+    细节图数量：<input autocomplete="off" id="number" name="数量" type="text" value="细节图张数" onclick="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'};" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" style="color:#999" />
+</li>
+<div class="button_ok">
+    <button id="show_product" title="输出的 product 页的完整代码" >输出 product 页HTML</button>
+    <button id="copytoclip" title="复制代码到剪切板" >复制到剪切板</button>
+    <button id="reload_page" title="清空已输入的数据" >清空输入</button>
+</div><br>
+<textarea style="width: 1200px; height: 650px;" id="result" tabindex="99"></textarea>
+<br><br><a href="http://weibo.com/viparcher">Created By VIPArcher All Rights Reserved.<br></a>
+</body>
+</html>
